@@ -44,7 +44,7 @@ if [[ "$primer_letra" == "w" ]]; then
         sudo nmcli dev wifi connect "$SSID"
     fi
 
-    echo "Configuración de WiFi guardada de forma permanente."
+    echo "Configuración de WiFi guardada."
 
 # Si es una interfaz cableada
 elif [[ "$primer_letra" == "e" ]]; then
