@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Rafael Alejandro Díaz Rangel
+
 echo "Bienvenido"
 echo "Mostrando interfaces de red disponibles..."
 ip link show
@@ -62,14 +64,15 @@ elif [[ "$primer_letra" == "e" ]]; then
         sudo nmcli connection add type ethernet ifname "$interface" ip4 "$ip/$mascara" gw4 "$gateway"
         sudo nmcli connection modify "$interface" ipv4.method manual
         sudo nmcli connection up "$interface"
-        echo "Configuración estática aplicada y guardada de forma permanente."
+	# nmcli ya hace el guardado en automatico.
+        echo "Configuración estática aplicada y guardada."
 
     elif [[ "$opcion" == "d" ]]; then
         # Configuración dinámica (DHCP)
         sudo nmcli connection add type ethernet ifname "$interface"
         sudo nmcli connection modify "$interface" ipv4.method auto
         sudo nmcli connection up "$interface"
-        echo "Configuración dinámica (DHCP) aplicada y guardada de forma permanente."
+        echo "Configuración dinámica (DHCP) aplicada y guardada."
     fi
 fi
 
