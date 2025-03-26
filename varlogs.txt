@@ -1,0 +1,19 @@
+¿Que archivos hay en el archivo /var/log/ ?
+tenemos a apt en directorio
+tambien tenemos a journal, en cual encontraremos un system.journal que esta en binario, tambien
+encontraremos aun user-1000.journal, los archivos que contiene journal, estan en formato binario.
+por lo cual no se pueden abrir tratando de abrilo como un archivo de text.
+
+para que son cada uno?
+system.journal es para capturar y centralizar las entradas del log del kernel, varios servicios systemd,
+y otros procesos, el otro el cual es user-1000.journal contiene información acerca de los usuarios
+con el ID de 1000, la bitacora es parte del sistema de logs para capturar y las logs entries de 
+varios fuentes.
+
+apt, es una planificador
+directorio donde se guardan 3 importantes archivos
+el primero es eipp.log.xz, forma parte del protocol de Planificación de Instalación Externa, que 
+es una interfaz entre APT, las herramientas de planificación externas (incluidos el propio APT)
+Y [NOMBRE DEL PROYECYO].dpkg
+el segundo history.log
+term.log
